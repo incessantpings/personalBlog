@@ -1,4 +1,47 @@
 header {
     display: flex;
     flex-flow: row nowrap;
+    justify-content: space-around;
+}
+
+/* The following code pertaining to grid based */
+/* on https://www.w3schools.com/css/tryit.asp?filename=trycss_grid_layout_named */
+main {
+    display: grid;
+    box-sizing: border-box;
+    grid-template-areas:
+        "header header header"
+        "content content menu"
+        "footer footer footer";
+    grid-template-columns: 2fr 2fr 1fr;
+    gap: 0.1fr;
+    padding: 0.2fr;
+}
+
+.banner{
+    grid-area: header;
+    text-align: center;
+    border: 5px solid purple;
+}
+
+.menu {
+
+    grid-area: menu;
+    border: 5px solid orange;
+}
+
+.content {
+    grid-area: content;
+    border: 5px solid green;
+    text-align: center;
+
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: space-evenly;
+}
+
+.footer {
+    grid-area: footer;
+    border: 5px solid red;
+    text-align: center;
 }
