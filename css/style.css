@@ -45,3 +45,16 @@ main {
     border: 5px solid red;
     text-align: center;
 }
+
+.blogpost {
+    box-sizing: border-box;
+    padding: 2em 5em;
+}
+
+h1 {
+    display:block;
+}
+
+p {
+    display:block;
+}
