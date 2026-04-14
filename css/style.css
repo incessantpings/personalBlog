@@ -58,3 +58,9 @@ h1 {
 p {
     display:block;
 }
+
+img {
+    /* need to scale down/up to 2/3 vw and adjust vh to keep aspect ratio*/
+    width: 70%;
+    object-fit: contain;
+}
