@@ -15,17 +15,30 @@
         <a href="about.html">About</a>
         <a href="equipment.html">Equipment</a>
         <button onclick="toggleContrast()">High Contrast</button>
+        <a href="https://www.inaturalist.org"><img src="images/inat.jpg"></a>
     </header>
 
     <main>
-        <!-- Investigate if able to change from div class to intuitive elt -->
-        <div class="banner">aaaaaaaaaaaaaaaaaaaa banner</div> 
+        <div class="banner">
+            <p>Full-Time Life</p>
+        </div> <!--So that this part is scrollable, but menu in actual docu header is sticky-->
 
-        <div class="menu">hello hello hello filterwall</div>
+        <div class="menu">
+            <h1>Filters</h1>
+            <ul>
+                <li><a href="#" onclick="filterPosts('all')">All</a></li>
+                <li><a href='#' onclick="filterPosts('AnnArbor')">Ann Arbor</a></li>
+                <li><a href="#" onclick="filterPosts('insect')">Insects</a></li>
+                <li><a href="#" onclick="filterPosts('flower')">Flowers</a></li>
+                <li><a href="#" onclick="filterPosts('snake')">Snakes</a></li>
+                <li><a href='#' onclick="filterPosts('spider')">Spiders</a></li>
+                <li><a href='#' onclick="filterPosts('bird')">Birds</a></li>
+            </ul>
+        </div>
         
         <div class="content">
 
-            <section class="blogpost">
+            <section class="blogpost flower snake AnnArbor">
                 <h1>Some fun at Matthaei</h1>
                 <h2>by Yun Park</h2>
                 <h3>04/12/26</h3>
@@ -56,14 +69,14 @@
                 </p>
                 <figure>
                     <img src="images/massasauga1.jpg" alt="An Eastern Massasauga looking directly at the camera, coiled on top of a log">
-                    <figurecaption>You'll have to excuse my misleading editing. The clouds were masking the sun.</figurecaption>
+                    <figcaption>You'll have to excuse my misleading editing. The clouds were masking the sun.</figcaption>
                 </figure>
                 <p>
                     Stay tuned for later in the season, when we revisit Matthaei for some of its rarities hidden deep within the fen!
                 </p>
             </section>
 
-            <section class="blogpost"> <!--I chose to use section instead of div due to the semantic meaning which is more accessible to webscrapers-->
+            <section class="blogpost insect AnnArbor"> <!--I chose to use section instead of div due to the semantic meaning which is more accessible to webscrapers-->
                 <h1>Arb Strats</h1>
                 <h2>by Yun Park</h2>
                 <h3>04/08/26</h3>
@@ -105,7 +118,7 @@
                 </p>
             </section>
 
-            <section class="blogpost">
+            <section class="blogpost insect spider AnnArbor">
                 <h1>The Landlord Special</h1>
                 <h2>by Yun Park</h2>
                 <h3>04/01/26</h3>
@@ -126,7 +139,7 @@
                     orange color scheme. 
                 </p>
                 <figure>
-                    <img src="images/jumper1" alt="A tiny jumping spider on top of a finger for scale">
+                    <img src="images/jumper1.jpg" alt="A tiny jumping spider on top of a finger for scale">
                     <figcaption>Aw, hi :]</figcaption>
                 </figure>
                 <p>
@@ -148,7 +161,7 @@
                 </p>
             </section>
 
-            <section class="blogpost">
+            <section class="blogpost spider">
                 <h1>Arachnomania!</h1>
                 <h2>by Yun Park</h2>
                 <h3>03/30/26</h3>
@@ -182,11 +195,93 @@
                     a North American naturalist.
                 </p>
             </section>
+
+            <section class="blogpost flower">
+                <h1>Plants Coming Soon!</h1>
+                <h2>by daksu</h2>
+                <h3>03/22/26</h3>
+                <p>
+                    Recently, I visited Cincinnati and then the Great Smoky Mountains. The 
+                    greenery was still relatively dormant in both, but much more awake than Michigan's right 
+                    now, which really got me thinking about plants I've encountered in the past. Here's a few that I've seen!
+                </p>
+                <figure>
+                    <img src="images/devilsbite1.jpg" alt="A center-framed shot of purple Devil's Bite flowers.">
+                    <figcaption>
+                        One of my most sought-after wildflowers, this Devil's Bite was in the perfect lighting and position for a portrait.
+                    </figcaption>
+                </figure>
+                <figure>
+                    <img src="images/bigbluestem1.jpg" alt="The flowering grassheads of Big Bluestem, held up against the sky">
+                    <figcaption>
+                        Big Bluestem is an important native grass, and makes up most of the Dow Prairie in Nichols Arboretum.
+                    </figcaption>
+                </figure>
+                <figure>
+                    <img src="images/ghostpipe1.JPG" alt="Ghostly-white ghostpipe pictured among green brush.">
+                    <figcaption>
+                        Ghostpipe is a weirdo in that it does not even photosynthesize. Instead, it feeds off the roots of large trees.
+                    </figcaption>
+                </figure>
+            </section>
+
+            <section class="blogpost insect bird">
+                <h1>Birds, I guess.</h1>
+                <h2>by daksu</h2>
+                <h3>03/19/26</h3>
+                <p>
+                    It's weird. I started out as a "birder", but the more I became interested
+                    in other forms of life, the more I started to resent the birding community. 
+                    To be more specific, I really dislike "listers", who will trample habitat and 
+                    often even disturb their own subjects just to get the same shot of a rare bird as 
+                    a million of their friends.
+                </p>
+                <p>
+                    I would be lying if I said it did not poison my love for birds, but it would be foolish
+                    to hold their fans' behavior against them. That being said, here are some cool birds I've 
+                    found over the years!
+                </p>
+                <figure>
+                    <img src="images/greatblueheron1.JPG" alt="A Great Blue Heron stalking through high wetlands.">
+                    <figcaption>What the hell?</figcaption>
+                </figure>
+                <p>
+                    I was completely shocked to look up from my search for <i>Sagittaria</i> arrowheads and find 
+                    this charming fellow poking around, looking for fish or herps to eat. This is a Great Blue Heron, 
+                    and at the imposing stature of about-my-height, I'd say that it earns the name.
+                </p>
+                <figure>
+                    <img src="images/spinustristis1.JPG" alt="A goldfinch perched in a mess of flowering thistle.">
+                    <figcaption>That can't possibly be comfortable.</figcaption>
+                </figure>
+                <p>
+                    I had just gotten off work from a barbecue in Cincinnati when I noticed this picturesque scene 
+                    playing out in the park next door. Did this goldfinch find the one comfortable spot to put one's 
+                    feet on thistle, or was it just trying to look cool and silently suffering?
+                </p>
+                <figure>
+                    <img src="images/nessussphinx.JPG" alt="A 'hummingbird' moth sipping sap in the company of butterflies.">
+                    <figcaption>Wait a second...</figcaption>
+                </figure>
+                <p>
+                    Did I fool you? Hopefully not. This is a Nessus Sphinx, a moth of the family Sphingidae. 
+                    Diurnal Sphingids are often mistaken for hummingbirds due to their size and speed, which makes it 
+                    hard for people to tell them apart (usually). Don't judge them too harshly, I had to set my shutter speed to 
+                    1/1000 to even half-freeze the wings.
+                </p>
+            </section>
         </div>
         
 
         <!-- Investigate if able to change from div class to intuitive elt -->
-        <div class="footer">aaaaaaaaaaaaa footer</div>
+        <div class="footer">
+            <p>Thanks for visiting! Here's some other cool sites to check out!</p>
+            <ul>
+                <a href="https://jimmccormac.blogspot.com/">Ohio Birds and Biodiversity</a><br>
+                <a href="https://davidcappaert.weebly.com/">David Cappaert's Site</a><br>
+                <a href="https://michiganbotanicalsociety.org/">Michigan Botanical Society</a><br>
+            </ul>
+        </div>
         
 
     </main>
@@ -197,7 +292,19 @@
     </footer>
 
     <script>
-
+        function filterPosts(category) {
+            const posts = document.querySelectorAll('.blogpost');
+        
+            posts.forEach(post => {
+                if (category === 'all') {
+                    post.style.display = 'block';
+                } else if (post.dataset.category === category) {
+                    post.style.display = 'block';
+                } else {
+                    post.style.display = 'none';
+                }
+            });
+        }
     </script>
 
 </body>
