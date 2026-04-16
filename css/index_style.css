@@ -26,10 +26,20 @@ header {
     background-color: var(--headerfooter-color);
     color: var(--headerfooter-text-color);
     height: 2rem;
+
+    position: sticky;
+    top: 0;
 }
 
 header a {
     color: var(--headerfooter-text-color); /*remember to adjust the visited state too*/
+}
+
+a img{
+    width: 2rem;
+    object-fit: contain;
+    display: block;
+    border-radius: 0.3rem;
 }
 
 /* The following code pertaining to grid based */
@@ -40,7 +50,7 @@ main {
     grid-template-areas:
         "header header header"
         "content content menu"
-        "footer footer footer";
+    ;
     grid-template-columns: 2fr 2fr 1fr;
     gap: 0.1fr;
     padding: 0.2fr;
@@ -65,7 +75,6 @@ main {
     color: #ffffff;
     font-size: 6rem;
     font-weight: bold;
-    text-decoration: underline solid #000000 0.5rem ;
     font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
 }
 
@@ -76,6 +85,11 @@ main {
 
     background-color: var(--headerfooter-color);
     color: var(--sidebar-text-color);
+
+    position: sticky;
+    align-self: start;
+    height: auto;
+    top: 2.3rem;
 }
 
 .content {
@@ -87,12 +101,13 @@ main {
 
 }
 
-.footer {
-    grid-area: footer;
+footer {
+
     text-align: center;
     background-color: var(--headerfooter-color);
     color: var(--headerfooter-text-color);
-    height: 5vw;
+    height: auto;
+    padding: 0.1rem;
 
     display: flex;
     flex-flow: column wrap;
@@ -113,9 +128,3 @@ main {
     object-fit: contain;
 }
 
-a img{
-    width: 2rem;
-    object-fit: contain;
-    display: block;
-    border-radius: 0.3rem;
-}

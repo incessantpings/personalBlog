@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/reset.css">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/index_style.css">
     <link rel="shortcut icon" href="" type="image/x-icon">
     <title>Full-Time Life - Home</title>
 </head>
@@ -13,9 +13,9 @@
     <header>
         <a href="index.html">Home</a>
         <a href="about.html">About</a>
-        <a href="equipment.html">Equipment</a>
         <button onclick="toggleContrast()">High Contrast</button>
-        <a href="https://www.inaturalist.org"><img src="images/inat.jpg"></a>
+        <button onclick="toggleArachnophobia()">Arachnophobia Mode</button>
+        <a href="https://www.inaturalist.org/people/7548218"><img src="images/inat.jpg" alt="The iNaturalist logo."></a>
     </header>
 
     <main>
@@ -139,7 +139,7 @@
                     orange color scheme. 
                 </p>
                 <figure>
-                    <img src="images/jumper1.jpg" alt="A tiny jumping spider on top of a finger for scale">
+                    <img class="spidimage" src="images/jumpingspider1.jpg" alt="A tiny jumping spider on top of a finger for scale">
                     <figcaption>Aw, hi :]</figcaption>
                 </figure>
                 <p>
@@ -149,7 +149,7 @@
                     usually means that prey is bound to be abundant.
                 </p>
                 <figure>
-                    <img src="images/fly1" alt="A close-up shot of a fly, with the red compound eyes in focus">
+                    <img src="images/fly1.jpg" alt="A close-up shot of a fly, with the red compound eyes in focus">
                     <figcaption>Case in point- a juicy catch.</figcaption>
                 </figure>
                 <p>
@@ -174,7 +174,7 @@
                     an intensely mysterious, yet awesome tribute to our ancient friends.
                 </p>
                 <figure>
-                    <img src="images/stretchspider1.jpg" alt="A stretch spider with its legs forward, eyes visible from above">
+                    <img class="spidimage" src="images/stretchspider1.jpg" alt="A stretch spider with its legs forward, eyes visible from above">
                     <figcaption>One of the spiders depicted in both guides, the "stretch spider".</figcaption>
                 </figure>
                 <p>
@@ -272,39 +272,78 @@
             </section>
         </div>
         
-
-        <!-- Investigate if able to change from div class to intuitive elt -->
-        <div class="footer">
-            <p>Thanks for visiting! Here's some other cool sites to check out!</p>
-            <ul>
-                <a href="https://jimmccormac.blogspot.com/">Ohio Birds and Biodiversity</a><br>
-                <a href="https://davidcappaert.weebly.com/">David Cappaert's Site</a><br>
-                <a href="https://michiganbotanicalsociety.org/">Michigan Botanical Society</a><br>
-            </ul>
-        </div>
         
 
     </main>
 
     <footer>
-
-
+        <p>Thanks for visiting! Here's some other cool sites to check out!</p>
+        <ul>
+            <a href="https://jimmccormac.blogspot.com/">Ohio Birds and Biodiversity</a><br>
+            <a href="https://davidcappaert.weebly.com/">David Cappaert's Site</a><br>
+            <a href="https://michiganbotanicalsociety.org/">Michigan Botanical Society</a><br>
+        </ul>
     </footer>
 
     <script>
+        /* Basic menu filtering */
         function filterPosts(category) {
             const posts = document.querySelectorAll('.blogpost');
         
             posts.forEach(post => {
                 if (category === 'all') {
                     post.style.display = 'block';
-                } else if (post.dataset.category === category) {
+                } else if (post.classList.contains(category)) {
                     post.style.display = 'block';
                 } else {
                     post.style.display = 'none';
                 }
             });
         }
+
+        /* Arachnophobia mode */
+        /* I could have done this in a much easier way obviously but this is funny and somewhat cooler*/
+        
+        /* text switching */
+        let arachnophobiaOn = false;
+
+        function toggleArachnophobia() {
+            arachnophobiaOn = !arachnophobiaOn;
+
+            /*found via https://developer.mozilla.org/en-US/docs/Web/API/TreeWalker*/
+            const walker = document.createTreeWalker(
+                document.body,
+                NodeFilter.SHOW_TEXT,
+                null
+            );
+
+            while (walker.nextNode()) {
+                const node = walker.currentNode;
+            
+                if (arachnophobiaOn) {
+                    node.nodeValue = node.nodeValue.replaceAll("spider", "blider");
+                    node.nodeValue = node.nodeValue.replaceAll("Spider", "Blider");
+                    node.nodeValue = node.nodeValue.replaceAll("Arachnomania", "Blargnomania");
+
+                } else {
+                    node.nodeValue = node.nodeValue.replaceAll("Blider", "Spider");
+                    node.nodeValue = node.nodeValue.replaceAll("blider", "spider");
+                    node.nodeValue = node.nodeValue.replaceAll("Blargnomania", "Arachnomania");
+                }
+            }
+        
+            /* Image switching */
+            const imgs = document.querySelectorAll('.spidimage');
+
+            imgs.forEach(img => {
+                if (arachnophobiaOn) {
+                    img.src = img.src.replace("spider", "blider");
+                } else {
+                    img.src = img.src.replace("blider", "spider");
+                }
+            });
+        }   
+
     </script>
 
 </body>
