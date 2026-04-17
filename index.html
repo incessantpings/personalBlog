@@ -4,6 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/reset.css">
+
+    <!--Lightbox-->
+    <link rel="stylesheet" href="lightbox2-dev/dist/css/lightbox.css" >
+
     <link rel="stylesheet" href="css/index_style.css">
     <link rel="shortcut icon" href="" type="image/x-icon">
     <title>Full-Time Life - Home</title>
@@ -15,16 +19,32 @@
         <a href="about.html">About</a>
         <button onclick="toggleContrast()">High Contrast</button>
         <button onclick="toggleArachnophobia()">Arachnophobia Mode</button>
+
+        <div class="dropdown">
+            <button onclick="myFunction()" class="dropbtn">Filters</button>
+            <div id="myDropdown" class="dropdown-content">
+                <a href="#" onclick="filterPosts('all')">All</a>
+                <a href='#' onclick="filterPosts('AnnArbor')">Ann Arbor</a>
+                <a href="#" onclick="filterPosts('insect')">Insects</a>
+                <a href="#" onclick="filterPosts('flower')">Flowers</a>
+                <a href="#" onclick="filterPosts('snake')">Snakes</a>
+                <a href='#' onclick="filterPosts('spider')">Spiders</a>
+                <a href='#' onclick="filterPosts('bird')">Birds</a>
+                <a href="#" onclick="filterPosts('yp')">by Yun Park</a>
+                <a href="#" onclick="filterPosts('dk')">by daksu</a>
+            </div>
+        </div> 
+
         <a href="https://www.inaturalist.org/people/7548218"><img src="images/inat.jpg" alt="The iNaturalist logo."></a>
     </header>
 
     <main>
         <div class="banner">
-            <p>Full-Time Life</p>
+            <h1>Full-Time Life</h1>
         </div> <!--So that this part is scrollable, but menu in actual docu header is sticky-->
 
         <div class="menu">
-            <h1>Filters</h1>
+            <h1>Filter by Topic</h1>
             <ul>
                 <li><a href="#" onclick="filterPosts('all')">All</a></li>
                 <li><a href='#' onclick="filterPosts('AnnArbor')">Ann Arbor</a></li>
@@ -34,11 +54,16 @@
                 <li><a href='#' onclick="filterPosts('spider')">Spiders</a></li>
                 <li><a href='#' onclick="filterPosts('bird')">Birds</a></li>
             </ul>
+            <h1>Filter by Author</h1>
+            <ul>
+                <li><a href="#" onclick="filterPosts('yp')">Yun Park</a></li>
+                <li><a href="#" onclick="filterPosts('dk')">daksu</a></li>
+            </ul>
         </div>
         
         <div class="content">
 
-            <section class="blogpost flower snake AnnArbor">
+            <section class="blogpost flower snake AnnArbor yp">
                 <h1>Some fun at Matthaei</h1>
                 <h2>by Yun Park</h2>
                 <h3>04/12/26</h3>
@@ -47,10 +72,9 @@
                     on a walk for the Entomology Club. Despite low attendance, we were greatly
                     rewarded for our persistence.
                 </p>
-                <figure>
+                <a href="images/marshmarigold1.jpg" data-lightbox="041226" data-title="Gorgeous and golden, our proxy suns on this cloudy day" data-alt="A close-up of many blooming Marsh Marigold flowers.">
                     <img src="images/marshmarigold1.jpg" alt="A close-up of many blooming Marsh Marigold flowers.">
-                    <figcaption>Gorgeous and golden, our proxy suns on this cloudy day.</figcaption>
-                </figure>
+                </a>
                 <p>
                     First-up were these beautiful <i>Caltha palustris</i>, the Marsh Marigolds.
                     At first I was alarmed, thinking that it was their invasive lookalike, Europe's 
@@ -67,16 +91,15 @@
                     It was draped over a log in extraordinary camouflage, spotted only by the keen eyes of one
                     of our members. 
                 </p>
-                <figure>
+                <a href="images/massasauga1.jpg" data-lightbox="041226" data-title="You'll have to excuse my misleading editing. The clouds were masking the sun." data-alt="An Eastern Massasauga looking directly at the camera, coiled on top of a log">
                     <img src="images/massasauga1.jpg" alt="An Eastern Massasauga looking directly at the camera, coiled on top of a log">
-                    <figcaption>You'll have to excuse my misleading editing. The clouds were masking the sun.</figcaption>
-                </figure>
+                </a>
                 <p>
                     Stay tuned for later in the season, when we revisit Matthaei for some of its rarities hidden deep within the fen!
                 </p>
             </section>
 
-            <section class="blogpost insect AnnArbor"> <!--I chose to use section instead of div due to the semantic meaning which is more accessible to webscrapers-->
+            <section class="blogpost insect AnnArbor yp"> <!--I chose to use section instead of div due to the semantic meaning which is more accessible to webscrapers-->
                 <h1>Arb Strats</h1>
                 <h2>by Yun Park</h2>
                 <h3>04/08/26</h3>
@@ -91,10 +114,9 @@
                     transplants, namely Great Rhododendron and Mountain Laurel. These hardy shrubs give numerous creatures vast swaths
                     of unchanging cover, from jumping spiders to fellows like this Blackberry Psyllid.
                 </p>
-                <figure>
+                <a href="images/blackberry1.jpg" data-lightbox="040826" data-title="This Blackberry Psyllid is not staying very true to its name." data-alt="A close-up of the Blackberry Psyllid underneath a Great Rhododendron leaf">
                     <img src="images/blackberry1.jpg" alt="A close-up of the Blackberry Psyllid underneath a Great Rhododendron leaf">
-                    <figcaption>This Blackberry Psyllid is not staying very true to its name.</figcaption>
-                </figure>
+                </a>
                 <p>
                     The reason why I say this is odd is because non-native plants generally don't have the same
                     connections with local wildlife as native plants, due to their alien status. So, in theory, 
@@ -105,20 +127,18 @@
                     them over (in as unobtrusive a manner as possible, of course). Here are a few finds I've gotten
                     with both methods.
                 </p>
-                <figure>
+                <a href="images/cherrymillipede1.jpg" data-lightbox="040826" data-title="I found this cherry millipede by flipping over an especially wet, soft log." data-alt="A cherry millipede bumbling across the ground">
                     <img src="images/cherrymillipede1.jpg" alt="A cherry millipede bumbling across the ground">
-                    <figcaption>I found this cherry millipede by flipping over an especially wet, soft log.</figcaption>
-                </figure>
-                <figure>
+                </a>
+                <a href="images/springtail1.jpg" data-lightbox="040826" data-title="Meanwhile, there were plenty of these little springtails tumbling out of the crevices behind plates of bark." data-alt="A globular springtail on soil detritus, facing towards the camera.">
                     <img src="images/springtail1.jpg" alt="A globular springtail on soil detritus, facing towards the camera.">
-                    <figcaption>Meanwhile, there were plenty of these little springtails tumbling out of the crevices behind plates of bark.</figcaption>
-                </figure>
+                </a>
                 <p>
                     In any case, the best thing you can do to find insects is to go out! Happy hunting!
                 </p>
             </section>
 
-            <section class="blogpost insect spider AnnArbor">
+            <section class="blogpost insect spider AnnArbor yp">
                 <h1>The Landlord Special</h1>
                 <h2>by Yun Park</h2>
                 <h3>04/01/26</h3>
@@ -129,29 +149,26 @@
                     of course!). Here are some of the things I've come across while mindlessly walking around
                     them!
                 </p>
-                <figure>
+                <a href="images/boxelderbug1.jpg" data-lightbox="040126" data-title="My most common find, but still pretty spectacular!" data-alt="A boxelder bug in the corner between two pillars">
                     <img src="images/boxelderbug1.jpg" alt="A boxelder bug in the corner between two pillars">
-                    <figcaption>My most common find, but still pretty spectacular!</figcaption>
-                </figure>
+                </a>
                 <p>
                     The boxelder bug is not rare by any means, nor particularly loved for its habit of 
                     crowding up inside walls when it gets cold out, but I still love the striking black and 
                     orange color scheme. 
                 </p>
-                <figure>
+                <a class="spidlink" href="images/jumpingspider1.jpg" data-lightbox="040126" data-title="Aw, hi :]">
                     <img class="spidimage" src="images/jumpingspider1.jpg" alt="A tiny jumping spider on top of a finger for scale">
-                    <figcaption>Aw, hi :]</figcaption>
-                </figure>
+                </a>
                 <p>
                     Jumping spiders are also a common find for me, although it does take some time
                     for them to come out. This one is the Dimorphic Jumping Spider, with little pops of orange
                     to complement the mottled beige and brown. Finding predators like these is a good sign, since it
                     usually means that prey is bound to be abundant.
                 </p>
-                <figure>
+                <a href="images/fly1.jpg" data-lightbox="040126" data-title="Case in point- a juicy catch." data-alt="A close-up shot of a fly, with the red compound eyes in focus">
                     <img src="images/fly1.jpg" alt="A close-up shot of a fly, with the red compound eyes in focus">
-                    <figcaption>Case in point- a juicy catch.</figcaption>
-                </figure>
+                </a>
                 <p>
                     For all that I love about insects and macro photography, I have to admit that seeing
                     a fly in detail is still rather unpleasant. I don't enjoy the stiff, bristly hairs nor
@@ -161,7 +178,7 @@
                 </p>
             </section>
 
-            <section class="blogpost spider">
+            <section class="blogpost spider yp">
                 <h1>Arachnomania!</h1>
                 <h2>by Yun Park</h2>
                 <h3>03/30/26</h3>
@@ -173,10 +190,10 @@
                     looked so good as they do when drawn by Steve Buchanan, Bradley's illustrator. Each plate manages 
                     an intensely mysterious, yet awesome tribute to our ancient friends.
                 </p>
-                <figure>
+                <a class="spidlink" href="images/stretchspider1.JPG" data-lightbox="033026" >
                     <img class="spidimage" src="images/stretchspider1.jpg" alt="A stretch spider with its legs forward, eyes visible from above">
-                    <figcaption>One of the spiders depicted in both guides, the "stretch spider".</figcaption>
-                </figure>
+                    <figcaption>One of the spiders depicted in both guides, the 'stretch spider'</figcaption>
+                </a>
                 <p>
                     That allows for a brief retrospect and review of the field guides I've used in the past. 
                     I was never into nature as a teen, nor even as a kid. That all changed when I decided that 
@@ -185,10 +202,9 @@
                     of 5+ major groups of organisms, from mushrooms to sweat bees, all thanks to North America's 
                     excellent and diverse field guide industry. 
                 </p>
-                <figure>
+                <a href="images/landscape1.jpg" data-lightbox="033026" data-title="In places where I once might have been scared or bored, now I find myself brimming with excitement to meet the subjects of my studies." data-alt="A shining blue sky over a dark forest">
                     <img src="images/landscape1.jpg" alt="A shining blue sky over a dark forest">
-                    <figcaption>In places where I once might have been scared or bored, now I find myself brimming with excitement to meet the subjects of my studies.</figcaption>
-                </figure>
+                </a>
                 <p>
                     And a huge shout-out to the community over on iNaturalist, which lets myself and other amateurs 
                     connect regularly with actual career scientists for the benefit of all. It's a good time to be 
@@ -196,7 +212,7 @@
                 </p>
             </section>
 
-            <section class="blogpost flower">
+            <section class="blogpost flower dk">
                 <h1>Plants Coming Soon!</h1>
                 <h2>by daksu</h2>
                 <h3>03/22/26</h3>
@@ -205,27 +221,18 @@
                     greenery was still relatively dormant in both, but much more awake than Michigan's right 
                     now, which really got me thinking about plants I've encountered in the past. Here's a few that I've seen!
                 </p>
-                <figure>
+                <a href="images/devilsbite1.jpg" data-lightbox="032226" data-title="One of my most sought-after wildflowers, this Devil's Bite was in the perfect lighting and position for a portrait." data-alt="A center-framed shot of purple Devil's Bite flowers.">
                     <img src="images/devilsbite1.jpg" alt="A center-framed shot of purple Devil's Bite flowers.">
-                    <figcaption>
-                        One of my most sought-after wildflowers, this Devil's Bite was in the perfect lighting and position for a portrait.
-                    </figcaption>
-                </figure>
-                <figure>
+                </a>
+                <a href="images/bigbluestem1.jpg" data-lightbox="032226" data-title="Big Bluestem is an important native grass, and makes up most of the Dow Prairie in Nichols Arboretum." data-alt="The flowering grassheads of Big Bluestem, held up against the sky">
                     <img src="images/bigbluestem1.jpg" alt="The flowering grassheads of Big Bluestem, held up against the sky">
-                    <figcaption>
-                        Big Bluestem is an important native grass, and makes up most of the Dow Prairie in Nichols Arboretum.
-                    </figcaption>
-                </figure>
-                <figure>
+                </a>
+                <a href="images/ghostpipe1.JPG" data-lightbox="032226" data-title="Ghostpipe is a weirdo in that it does not even photosynthesize. Instead, it feeds off the roots of large trees." data-alt="Ghostly-white ghostpipe pictured among green brush.">
                     <img src="images/ghostpipe1.JPG" alt="Ghostly-white ghostpipe pictured among green brush.">
-                    <figcaption>
-                        Ghostpipe is a weirdo in that it does not even photosynthesize. Instead, it feeds off the roots of large trees.
-                    </figcaption>
-                </figure>
+                </a>
             </section>
 
-            <section class="blogpost insect bird">
+            <section class="blogpost insect bird dk">
                 <h1>Birds, I guess.</h1>
                 <h2>by daksu</h2>
                 <h3>03/19/26</h3>
@@ -241,28 +248,25 @@
                     to hold their fans' behavior against them. That being said, here are some cool birds I've 
                     found over the years!
                 </p>
-                <figure>
+                <a href="images/greatblueheron1.JPG" data-lightbox="031926" data-title="What the hell?" data-alt="A Great Blue Heron stalking through high wetlands.">
                     <img src="images/greatblueheron1.JPG" alt="A Great Blue Heron stalking through high wetlands.">
-                    <figcaption>What the hell?</figcaption>
-                </figure>
+                </a>
                 <p>
                     I was completely shocked to look up from my search for <i>Sagittaria</i> arrowheads and find 
                     this charming fellow poking around, looking for fish or herps to eat. This is a Great Blue Heron, 
                     and at the imposing stature of about-my-height, I'd say that it earns the name.
                 </p>
-                <figure>
+                <a href="images/spinustristis1.JPG" data-lightbox="031926" data-title="That can't possibly be comfortable." data-alt="A goldfinch perched in a mess of flowering thistle.">
                     <img src="images/spinustristis1.JPG" alt="A goldfinch perched in a mess of flowering thistle.">
-                    <figcaption>That can't possibly be comfortable.</figcaption>
-                </figure>
+                </a>
                 <p>
                     I had just gotten off work from a barbecue in Cincinnati when I noticed this picturesque scene 
                     playing out in the park next door. Did this goldfinch find the one comfortable spot to put one's 
                     feet on thistle, or was it just trying to look cool and silently suffering?
                 </p>
-                <figure>
+                <a href="images/nessussphinx.JPG" data-lightbox="031926" data-title="Wait a second..." data-alt="A 'hummingbird' moth sipping sap in the company of butterflies.">
                     <img src="images/nessussphinx.JPG" alt="A 'hummingbird' moth sipping sap in the company of butterflies.">
-                    <figcaption>Wait a second...</figcaption>
-                </figure>
+                </a>
                 <p>
                     Did I fool you? Hopefully not. This is a Nessus Sphinx, a moth of the family Sphingidae. 
                     Diurnal Sphingids are often mistaken for hummingbirds due to their size and speed, which makes it 
@@ -279,13 +283,22 @@
     <footer>
         <p>Thanks for visiting! Here's some other cool sites to check out!</p>
         <ul>
-            <a href="https://jimmccormac.blogspot.com/">Ohio Birds and Biodiversity</a><br>
-            <a href="https://davidcappaert.weebly.com/">David Cappaert's Site</a><br>
-            <a href="https://michiganbotanicalsociety.org/">Michigan Botanical Society</a><br>
+            <li><a href="https://jimmccormac.blogspot.com/">Ohio Birds and Biodiversity</a></li>
+            <li><a href="https://davidcappaert.weebly.com/">David Cappaert's Site</a></li>
+            <li><a href="https://michiganbotanicalsociety.org/">Michigan Botanical Society</a></li>
         </ul>
     </footer>
 
+    <script src="lightbox2-dev/dist/js/lightbox-plus-jquery.js"></script>
+
     <script>
+        lightbox.option({
+            'alwaysShowNavOnTouchDevices': true, /* more comfortable for mobile users to always see the preview arrows */
+            'fadeDuration': 300, /* just based on personal preference */
+            'resizeDuration': 400, /* same as above */
+            'wrapAround': true, /* gives the user just that bit more power to navigate however they wish */
+        })
+
         /* Basic menu filtering */
         function filterPosts(category) {
             const posts = document.querySelectorAll('.blogpost');
@@ -336,13 +349,54 @@
             const imgs = document.querySelectorAll('.spidimage');
 
             imgs.forEach(img => {
-                if (arachnophobiaOn) {
-                    img.src = img.src.replace("spider", "blider");
-                } else {
-                    img.src = img.src.replace("blider", "spider");
-                }
+                    if (arachnophobiaOn) {
+                        img.src = img.src.replace("spider", "blider");
+                    } else {
+                        img.src = img.src.replace("blider", "spider");
+                    }
             });
-        }   
+
+            /* Linked image switching */
+            const links = document.querySelectorAll('.spidlink');
+
+            links.forEach(a => {
+                    if (arachnophobiaOn) {
+                        a.href = a.href.replace("spider", "blider");
+                    } else {
+                        a.href = a.href.replace("blider", "spider");
+                    }
+            });
+        }
+        
+        /*High contrast mode button functionality*/
+        function toggleContrast() {
+            document.body.classList.toggle("high-contrast");
+        }
+
+        /*----------------------------------------------------------------------------------*/
+        /* dropdown JS from W3 schools */
+        /* When the user clicks on the button,
+        toggle between hiding and showing the dropdown content */
+        function myFunction() {
+            document.getElementById("myDropdown").classList.toggle("show");
+        }
+
+        /* Close the dropdown menu if the user clicks outside of it */
+        /* basically every time you click in the window, it triggers a checking function*/ 
+        window.onclick = function(event) {
+            if (!event.target.matches('.dropbtn')) { /*if you hadn't clicked on any part of dropbtn...*/
+            var dropdowns = document.getElementsByClassName("dropdown-content");
+            var i;
+            /*iterates thru the dropdown items and removes show from any that are showing, making them invisible visually*/
+            for (i = 0; i < dropdowns.length; i++) {
+                if (dropdowns[i].classList.contains('show')) {
+                dropdowns[i].classList.remove('show');
+                }
+            }
+            }
+        } 
+        /*----------------------------------------------------------------------------------*/
+
 
     </script>
 
